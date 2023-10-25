@@ -1,15 +1,15 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:011501581422:task-definition/AppTaskDef:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:011501581422:task-definition/AppDefT:1",
   "containerDefinitions": [
     {
       "name": "rust-test",
-      "image": "011501581422.dkr.ecr.ap-southeast-2.amazonaws.com/rust-test",
-      "cpu": 0,
+      "image": "011501581422.dkr.ecr.ap-northeast-1.amazonaws.com/rust-test",
+      "cpu": 512,
       "portMappings": [
         {
-          "name": "rust-test-80-tcp",
-          "containerPort": 80,
-          "hostPort": 80,
+          "name": "rust-test-8080-tcp",
+          "containerPort": 8080,
+          "hostPort": 8080,
           "protocol": "tcp",
           "appProtocol": "http"
         }
@@ -24,15 +24,15 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-create-group": "true",
-          "awslogs-group": "/ecs/",
-          "awslogs-region": "ap-southeast-2",
+          "awslogs-group": "/ecs/AppDefT",
+          "awslogs-region": "ap-northeast-1",
           "awslogs-stream-prefix": "ecs"
         },
         "secretOptions": []
       }
     }
   ],
-  "family": "AppTaskDef",
+  "family": "AppDefT",
   "executionRoleArn": "arn:aws:iam::011501581422:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
   "revision": 1,
@@ -58,22 +58,19 @@
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
     },
     {
-      "name": "ecs.capability.task-eni"
-    },
-    {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
     }
   ],
   "placementConstraints": [],
-  "compatibilities": ["EC2", "FARGATE"],
+  "compatibilities": ["FARGATE"],
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
-  "memory": "512",
+  "memory": "1024",
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2023-10-25T13:35:36.313Z",
+  "registeredAt": "2023-10-25T17:49:09.493Z",
   "registeredBy": "arn:aws:iam::011501581422:root",
   "tags": []
 }
