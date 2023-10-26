@@ -5,12 +5,14 @@ use serde::{Deserialize, Serialize};
 pub struct User {
   id: u32,
   name: String,
+  discription: String,
 }
 
 #[get("/")]
 pub async fn users() -> impl Responder {
   HttpResponse::Ok().json(User {
-    id: 2,
-    name: "Mosu".into(),
+    id: 123123123,
+    name: "TEEEEEEEEEEEEEEEEEEEEST".into(),
+    discription: "vvvvvvvvvvvvv".into(),
   })
 }
