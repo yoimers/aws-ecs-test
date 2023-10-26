@@ -9,6 +9,10 @@ pub struct User {
 }
 
 #[get("/")]
+pub async fn healthcheck() -> impl Responder {
+  HttpResponse::Ok()
+}
+#[get("/user")]
 pub async fn users() -> impl Responder {
   HttpResponse::Ok().json(User {
     id: 123123123,
