@@ -4,5 +4,5 @@ WORKDIR /usr/src/app
 COPY . .
 RUN cargo build --release
 
-EXPOSE 8080
+EXPOSE 80:8080
 ENTRYPOINT ["cargo", "run", "-r"]
