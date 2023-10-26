@@ -16,7 +16,7 @@ pub async fn healthcheck() -> impl Responder {
 pub async fn users() -> impl Responder {
   HttpResponse::Ok().json(User {
     id: 123123123,
-    name: "TEEEEEEEEEEEEEEEEEEEEST".into(),
+    name: "TEEEEEEEEEEEEEEEEEEST".into(),
     discription: "vvvvvvvvvvvvv".into(),
   })
 }
